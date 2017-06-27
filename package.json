@@ -15,8 +15,8 @@
   },
   "proxy": "http://localhost:3000/",
   "engines": {
-    "node": "6.9.1",
-    "npm": "3.10.8"
+    "node": "6.11.0",
+    "npm": "3.10.10"
   },
   "dependencies": {
     "axios": "^0.16.1",
