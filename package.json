@@ -86,7 +86,10 @@
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "babel-preset-react-app": "^3.0.0",
+    "bcrypt": "^1.0.2",
+    "bcryptjs": "^2.4.3",
     "case-sensitive-paths-webpack-plugin": "^2.1.1",
+    "chokidar": "^1.7.0",
     "eslint": "^3.19.0",
     "eslint-config-react-app": "^1.0.4",
     "eslint-loader": "^1.8.0",
@@ -95,6 +98,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.0",
     "eslint-plugin-react": "^7.1.0",
     "html-webpack-plugin": "^2.29.0",
+    "node-pre-gyp": "^0.6.36",
     "react": "^15.6.1",
     "react-dev": "0.0.1",
     "react-dev-utils": "^3.0.0",
