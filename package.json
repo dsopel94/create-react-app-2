@@ -85,7 +85,6 @@
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "babel-preset-react-app": "^3.0.0",
-    "bcrypt": "^1.0.2",
     "bcryptjs": "^2.4.3",
     "case-sensitive-paths-webpack-plugin": "^2.1.1",
     "chokidar": "^1.7.0",

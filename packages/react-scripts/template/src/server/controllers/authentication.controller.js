@@ -5,7 +5,7 @@ const crypto = require('crypto');
 const Instructor = require('../models/instructor');
 const config = require('../config/main');
 const passport = require('passport');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 function generateToken(instructor) {
   return jwt.sign(instructor, config.jwt, {
     expiresIn: 10080, // in seconds
