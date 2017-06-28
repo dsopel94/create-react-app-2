@@ -89,6 +89,7 @@
     ]
   },
   "devDependencies": {
+    "babel": "^6.23.0",
     "babel-eslint": "^7.2.3",
     "babel-preset-react-app": "^3.0.0",
     "bcryptjs": "^2.4.3",
