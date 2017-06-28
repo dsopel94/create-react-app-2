@@ -35,7 +35,7 @@ class SignUpPage extends React.Component {
     const field = event.target.name;
     const instructor = this.state.instructor;
     instructor[field] = event.target.value;
-
+    console.log(instructor[field]);
     this.setState({
       instructor,
     });

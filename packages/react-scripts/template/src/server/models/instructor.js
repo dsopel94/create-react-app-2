@@ -37,7 +37,8 @@ instructorSchema.pre('save', function(next) {
   bcrypt.genSalt(SALT_FACTOR, function(err, salt) {
     if (err) return next(err);
 
-    bcrypt.hash(instructor.password, salt, null, function(err, hash) {
+    bcrypt.hash(instructor.password, salt, function(err, hash) {
+      // null was inside the paramaters above after salt
       if (err) return next(err);
       instructor.password = hash;
       next();
@@ -55,7 +56,13 @@ instructorSchema.methods.apiRepr = function() {
 };
 
 instructorSchema.methods.comparePassword = function(candidatePassword, cb) {
-  bcrypt.compare(candidatePassword, this.password, cb);
+  bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
+    if (err) {
+      return cb(err);
+    }
+
+    cb(null, isMatch);
+  });
 };
 
 const Instructor = mongoose.model('Instructor', instructorSchema);
