@@ -16,10 +16,6 @@ const passport = require('passport');
 app.use(express.static('./server'));
 app.use(express.static('../dist'));
 
-app.get('/', function(request, response) {
-  response.send('Hello World!');
-});
-
 // Database Setup
 // mongoose.connect(config.dbUri);
 function runServer(databaseUrl = config.dbUri, port = '55631') {
