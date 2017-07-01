@@ -64,7 +64,7 @@ class AddStudentPage extends React.Component {
       return <Redirect to={`/courses/${this.props.match.params.cuid}`} />;
     }
     return (
-      <form action="/" onSubmit={this.onSubmit}>
+      <form action="/students" method="POST" onSubmit={this.onSubmit}>
         <div className="add-student-nav-options">
           <ul>
             <li>

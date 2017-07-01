@@ -36,15 +36,6 @@ class DashboardPage extends React.Component {
 
   componentDidMount() {
     this.props.dispatch(actions.getCourses());
-    // axios.get('http://localhost:3001/courses').then(response => {
-    //   const courses = response.data.courses;
-    //   const userIds = Object.keys(courses).map(
-    //     course => courses[course]._creator
-    //   );
-    //   this.setState({
-    //     courses: response.data.courses,
-    //   });
-    // });
   }
   render() {
     if (!this.state.authenticated) {

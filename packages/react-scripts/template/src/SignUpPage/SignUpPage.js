@@ -49,7 +49,7 @@ class SignUpPage extends React.Component {
     const fullName = this.state.instructor.fullName;
     const username = this.state.instructor.username;
     const password = this.state.instructor.password;
-    this.props.dispatch(actions.registerUser(username, fullName, password));
+    //this.props.dispatch(actions.registerUser(username, fullName, password));
   };
 
   // let this.hacky;

@@ -15,7 +15,7 @@ const LoginForm = (
     error,
   }
 ) => (
-  <form action="/" onSubmit={onSubmit}>
+  <form action="/api/auth/login" method="POST" onSubmit={onSubmit}>
     <div className="container">
       <h1 className="header">School Management App</h1>
       <h2 className="login">Log In</h2>
@@ -55,7 +55,6 @@ const LoginForm = (
 );
 
 LoginForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
   onChange: PropTypes.func.isRequired,
   errors: PropTypes.object.isRequired,
   successMessage: PropTypes.string.isRequired,

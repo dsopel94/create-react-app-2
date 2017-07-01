@@ -12,7 +12,7 @@ const SignUpForm = (
     instructor,
   }
 ) => (
-  <form action="/" onSubmit={onSubmit}>
+  <form action="/api/auth/register" method="POST" onSubmit={onSubmit}>
     <div className="container">
       <h1 className="header">School Management App</h1>
       <h2 className="sign-up">Sign Up</h2>

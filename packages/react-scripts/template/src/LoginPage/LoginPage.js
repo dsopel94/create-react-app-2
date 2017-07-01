@@ -34,12 +34,13 @@ class LoginPage extends React.Component {
   processForm(event) {
     // prevent default action. in this case, action is the form submission event
     event.preventDefault();
-
+    console.log('NOT TODAY');
+    return false;
     // create a string for an HTTP body message
     const username = this.state.instructor.username;
     const password = this.state.instructor.password;
     console.log(this.props.authenticated);
-    this.props.dispatch(actions.loginUser(username, password));
+    //this.props.dispatch(actions.loginUser(username, password));
     if (!this.state.authenticated) {
       this.setState({
         errorMessage: 'Not a valid username/password combination',
@@ -68,11 +69,11 @@ class LoginPage extends React.Component {
    */
   render() {
     if (this.props.authenticated === true) {
-      return <Redirect to="/auth/dashboard" />;
+      // return <Redirect to="/auth/dashboard" />;
+      return <Redirect to="/courses" />;
     }
     return (
       <LoginForm
-        onSubmit={this.processForm}
         onChange={this.changeUser}
         errors={this.state.errors}
         successMessage={this.state.successMessage}

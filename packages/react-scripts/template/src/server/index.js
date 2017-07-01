@@ -48,7 +48,6 @@ app.use('/api/login', router);
 app.use('/', periods);
 //app.use('/addCourse',courses)
 app.use('/api', courses);
-//app.use('/courses', router)
 app.use('/addCourse', courses);
 app.use('/', instructors);
 app.use('/', courses);

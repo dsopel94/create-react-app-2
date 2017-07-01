@@ -229,6 +229,8 @@ export const editStudent = (
 };
 
 export const loginUser = (username, password) => {
+  console.log('xxx');
+  return false;
   return function(dispatch) {
     dispatch({
       type: LOGIN_USER_REQUEST,

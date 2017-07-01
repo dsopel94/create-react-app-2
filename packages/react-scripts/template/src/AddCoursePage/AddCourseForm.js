@@ -46,7 +46,7 @@ class AddCoursePage extends React.Component {
       return <Redirect to="/auth/dashboard" />;
     }
     return (
-      <form action="/" onSubmit={this.onSubmit}>
+      <form action="/" method="POST" onSubmit={this.onSubmit}>
         <div className="add-course-header">
           <h1>Add a Course</h1>
         </div>

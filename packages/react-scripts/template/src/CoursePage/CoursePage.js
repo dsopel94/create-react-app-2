@@ -30,7 +30,7 @@ class CoursePage extends React.Component {
   }
 
   handleRedirect(event) {
-    this.props.dispatch(actions.setAsAuthenticated());
+    //this.props.dispatch(actions.setAsAuthenticated());
   }
 
   handleLogout(event) {
@@ -41,7 +41,7 @@ class CoursePage extends React.Component {
   deleteCourse(event) {
     const id = this.props.match.params.cuid;
     this.props.dispatch(actions.deleteCourse(id));
-    this.props.dispatch(actions.setAsAuthenticated());
+    //this.props.dispatch(actions.setAsAuthenticated());
     console.log('this is working');
   }
   componentDidMount() {

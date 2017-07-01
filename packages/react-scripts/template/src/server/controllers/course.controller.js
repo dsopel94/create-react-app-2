@@ -22,7 +22,8 @@ exports.getCourses = function(req, res) {
     if (err) {
       res.status(500).send(err);
     }
-    res.json({ courses });
+    // res.json({ courses });
+    res.send('/auth/dashboard');
   });
 };
 
@@ -45,8 +46,6 @@ exports.addCourse = function(req, res, next) {
   });
   // Let's sanitize inputs
   newCourse.name = sanitizeHtml(newCourse.name);
-  newCourse.startDate = sanitizeHtml(newCourse.startDate);
-  newCourse.endDate = sanitizeHtml(newCourse.endDate);
   newCourse._creator = sanitizeHtml(newCourse._creator);
   newCourse.cuid = cuid();
   newCourse.save(function(err, course) {
