@@ -72,7 +72,7 @@ then
   # AppVeyor uses an old version of yarn.
   # Once updated to 0.24.3 or above, the workaround can be removed
   # and replaced with `yarnpkg cache clean`
-  # Issues: 
+  # Issues:
   #    https://github.com/yarnpkg/yarn/issues/2591
   #    https://github.com/appveyor/ci/issues/1576
   #    https://github.com/facebookincubator/create-react-app/pull/2400
@@ -196,7 +196,7 @@ do
     sleep 1
   fi
 done
-E2E_URL="http://localhost:3001" \
+E2E_URL="https://pure-garden-14810.herokuapp.com/" \
   REACT_APP_SHELL_ENV_MESSAGE=fromtheshell \
   CI=true NODE_PATH=src \
   NODE_ENV=development \
