@@ -196,7 +196,7 @@ do
     sleep 1
   fi
 done
-E2E_URL="https://pure-garden-14810.herokuapp.com/" \
+E2E_URL="//whispering-badlands-12485.herokuapp.com/" \
   REACT_APP_SHELL_ENV_MESSAGE=fromtheshell \
   CI=true NODE_PATH=src \
   NODE_ENV=development \
