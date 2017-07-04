@@ -4,7 +4,6 @@
     "build": "node packages/react-scripts/scripts/build.js",
     "create-react-app": "tasks/cra.sh",
     "e2e": "tasks/e2e-simple.sh",
-    "postinstall": "cd packages/react-error-overlay/ && npm run build:prod",
     "publish": "tasks/release.sh",
     "start": "concurrently \"npm run server\" \"npm run client\"",
     "server": "node packages/react-scripts/template/src/server/index.js",
@@ -13,7 +12,7 @@
     "format": "prettier --trailing-comma es5 --single-quote --write 'packages/*/*.js' 'packages/*/!(node_modules)/**/*.js'",
     "precommit": "lint-staged"
   },
-  "proxy": "http://localhost:3000/",
+  "proxy": "http://localhost:3001/",
   "engines": {
     "node": "6.11.0",
     "npm": "3.10.10"
