@@ -3049,7 +3049,7 @@
             key: 'render',
             value: function() {
               return !0 === this.props.authenticated
-                ? s.a.createElement(p.c, { to: '/auth/dashboard' })
+                ? s.a.createElement(p.c, { to: '/build/auth/dashboard' })
                 : s.a.createElement(u.a, {
                     onSubmit: this.processForm,
                     onChange: this.changeUser,
@@ -6182,7 +6182,7 @@
             key: 'render',
             value: function() {
               return this.state.submitted
-                ? s.a.createElement(l.c, { to: '/auth/dashboard' })
+                ? s.a.createElement(l.c, { to: '/build/auth/dashboard' })
                 : s.a.createElement(
                     'form',
                     { action: '/', onSubmit: this.onSubmit },
@@ -6202,7 +6202,7 @@
                           null,
                           s.a.createElement(
                             p.b,
-                            { to: '/auth/dashboard' },
+                            { to: '/build/auth/dashboard' },
                             'Back to Your Dashboard'
                           )
                         ),
@@ -6211,7 +6211,7 @@
                           null,
                           s.a.createElement(
                             p.b,
-                            { to: '/login', onClick: this.handleLogout },
+                            { to: '/build/login', onClick: this.handleLogout },
                             'Log out '
                           )
                         )
@@ -6364,7 +6364,7 @@
             value: function() {
               return this.state.isSubmitted
                 ? s.a.createElement(l.c, {
-                    to: '/courses/' + this.props.match.params.cuid,
+                    to: '/build/courses/' + this.props.match.params.cuid,
                   })
                 : s.a.createElement(
                     'form',
@@ -6380,7 +6380,10 @@
                           null,
                           s.a.createElement(
                             p.b,
-                            { to: '/courses/' + this.props.match.params.cuid },
+                            {
+                              to: '/build/courses/' +
+                                this.props.match.params.cuid,
+                            },
                             'Back to Your Course Page'
                           )
                         ),
@@ -6389,7 +6392,7 @@
                           null,
                           s.a.createElement(
                             p.b,
-                            { to: '/login', onClick: this.handleLogout },
+                            { to: '/build/login', onClick: this.handleLogout },
                             'Log out '
                           )
                         )
@@ -6668,7 +6671,7 @@
                   { className: 'return-link' },
                   s.a.createElement(
                     u.b,
-                    { to: '/login' },
+                    { to: '/build/login' },
                     'Click here to return to the login page.'
                   )
                 )
@@ -6767,7 +6770,7 @@
                 });
               return 1 == this.state.isClicked
                 ? s.a.createElement(c.c, {
-                    to: '/courses/' + this.state.coursename,
+                    to: '/build/courses/' + this.state.coursename,
                   })
                 : s.a.createElement('div', { className: 'courseButtons' }, n);
             },
@@ -6932,7 +6935,10 @@
                       null,
                       s.a.createElement(
                         l.b,
-                        { to: '/addStudent/' + this.props.match.params.cuid },
+                        {
+                          to: '/build/addStudent/' +
+                            this.props.match.params.cuid,
+                        },
                         'Add a new student'
                       )
                     ),
@@ -6941,7 +6947,10 @@
                       null,
                       s.a.createElement(
                         l.b,
-                        { to: '/editCourse/' + this.props.match.params.cuid },
+                        {
+                          to: '/build/editCourse/' +
+                            this.props.match.params.cuid,
+                        },
                         'Edit Course Name'
                       )
                     ),
@@ -6950,7 +6959,10 @@
                       null,
                       s.a.createElement(
                         l.b,
-                        { to: '/auth/dashboard', onClick: this.deleteCourse },
+                        {
+                          to: '/build/auth/dashboard',
+                          onClick: this.deleteCourse,
+                        },
                         'Remove this course'
                       )
                     ),
@@ -6959,7 +6971,10 @@
                       null,
                       s.a.createElement(
                         l.b,
-                        { to: '/auth/dashboard', onClick: this.handleRedirect },
+                        {
+                          to: '/build/auth/dashboard',
+                          onClick: this.handleRedirect,
+                        },
                         'Back to Your Dashboard'
                       )
                     ),
@@ -6968,7 +6983,7 @@
                       null,
                       s.a.createElement(
                         l.b,
-                        { to: '/login', onClick: this.handleLogout },
+                        { to: '/build/login', onClick: this.handleLogout },
                         'Log out '
                       )
                     )
@@ -7120,7 +7135,7 @@
                       null,
                       s.a.createElement(
                         f.b,
-                        { to: '/addCourse' },
+                        { to: '/build/addCourse' },
                         'Add a new course '
                       )
                     ),
@@ -7129,7 +7144,7 @@
                       null,
                       s.a.createElement(
                         f.b,
-                        { to: '/login', onClick: this.handleLogout },
+                        { to: '/build/login', onClick: this.handleLogout },
                         'Log out '
                       )
                     )
@@ -7272,7 +7287,9 @@
                       null,
                       s.a.createElement(
                         l.b,
-                        { to: '/courses/' + this.props.match.params.cuid },
+                        {
+                          to: '/build/courses/' + this.props.match.params.cuid,
+                        },
                         'Back to Your Course'
                       )
                     ),
@@ -7281,7 +7298,7 @@
                       null,
                       s.a.createElement(
                         l.b,
-                        { to: '/login', onClick: this.handleLogout },
+                        { to: '/build/login', onClick: this.handleLogout },
                         'Log out '
                       )
                     )
@@ -7449,12 +7466,12 @@
                   { className: 'nav-options' },
                   s.a.createElement(
                     l.b,
-                    { to: '/courses/' + this.props.studentCourse },
+                    { to: '/build/courses/' + this.props.studentCourse },
                     'Back to Your Course'
                   ),
                   s.a.createElement(
                     l.b,
-                    { to: '/login', onClick: this.handleLogout },
+                    { to: '/build/login', onClick: this.handleLogout },
                     'Log out '
                   )
                 ),
@@ -7631,7 +7648,7 @@
               'div',
               { className: 'signup-redirect' },
               "Don't have an account? Create one. ",
-              o.a.createElement(s.b, { to: '/' }, ' Sign Up')
+              o.a.createElement(s.b, { to: '/build/' }, ' Sign Up')
             )
           )
         );
@@ -7715,13 +7732,13 @@
               'div',
               { className: 'login-redirect' },
               'Already have an account? ',
-              o.a.createElement(s.b, { to: '/login' }, ' Log in'),
+              o.a.createElement(s.b, { to: '/build/login' }, ' Log in'),
               o.a.createElement(
                 'p',
                 null,
                 'Want more info about this app?',
                 ' ',
-                o.a.createElement(s.b, { to: '/info' }, 'Click here'),
+                o.a.createElement(s.b, { to: '/build/info' }, 'Click here'),
                 ' '
               )
             )
