@@ -7,7 +7,7 @@
 /coverage
 
 # production
-# /build #need for gh-pages
+/build
 
 # misc
 .DS_Store
