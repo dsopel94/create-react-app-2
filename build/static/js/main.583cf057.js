@@ -513,9 +513,9 @@
             })
             .then(function(e) {
               v.set('token', e.data.token, {
-                path: '/',
+                path: '/build/',
                 maxAge: 86400,
-              }), v.set('instructor', e.data.instructor, { path: '/', maxAge: 86400 }), console.log(v.get('instructor')), n({ type: p.i, fullName: e.data.instructor.fullName });
+              }), v.set('instructor', e.data.instructor, { path: '/build/', maxAge: 86400 }), console.log(v.get('instructor')), n({ type: p.i, fullName: e.data.instructor.fullName });
             })
             .catch(function(e) {
               n({
@@ -2699,7 +2699,7 @@
             }),
           };
         }), (t.prototype.computeMatch = function(e) {
-          return { path: '/', url: '/', params: {}, isExact: '/' === e };
+          return { path: '/build/', url: '/', params: {}, isExact: '/' === e };
         }), (t.prototype.componentWillMount = function() {
           var e = this, t = this.props, n = t.children, r = t.history;
           c()(
@@ -5639,41 +5639,49 @@
             null,
             o.a.createElement(s.a, {
               exact: !0,
-              path: '/login',
+              path: '/build/login',
               component: c.a,
             }),
-            o.a.createElement(s.a, { exact: !0, path: '/', component: u.a }),
             o.a.createElement(s.a, {
               exact: !0,
-              path: '/auth/dashboard',
+              path: '/build/',
+              component: u.a,
+            }),
+            o.a.createElement(s.a, {
+              exact: !0,
+              path: '/build/auth/dashboard',
               component: l.a,
             }),
             o.a.createElement(s.a, {
               exact: !0,
-              path: '/addCourse',
+              path: '/build/addCourse',
               component: b.a,
             }),
             o.a.createElement(s.a, {
               exact: !0,
-              path: '/courses/:cuid',
+              path: '/build/courses/:cuid',
               component: w.a,
             }),
             o.a.createElement(s.a, {
               exact: !0,
-              path: '/addStudent/:cuid',
+              path: '/build/addStudent/:cuid',
               component: _.a,
             }),
             o.a.createElement(s.a, {
               exact: !0,
-              path: '/editStudent/:cuid',
+              path: '/build/editStudent/:cuid',
               component: E.a,
             }),
             o.a.createElement(s.a, {
               exact: !0,
-              path: '/editCourse/:cuid',
+              path: '/build/editCourse/:cuid',
               component: C.a,
             }),
-            o.a.createElement(s.a, { exact: !0, path: '/info', component: x.a })
+            o.a.createElement(s.a, {
+              exact: !0,
+              path: '/build/info',
+              component: x.a,
+            })
           )
         )
       );
@@ -7718,7 +7726,7 @@
               )
             )
           ),
-          o.a.createElement(u.a, { path: '/login', component: c.a })
+          o.a.createElement(u.a, { path: '/build/login', component: c.a })
         );
       };
     (l.propTypes = {
