@@ -13,21 +13,6 @@ const router = require('./routes/router');
 // const home = require('./routse/home.routes')
 const passport = require('passport');
 
-app.all('*', function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
-  res.header(
-    'Access-Control-Allow-Headers',
-    'accept, content-type, x-parse-application-id, x-parse-rest-api-key, x-parse-session-token'
-  );
-  // intercept OPTIONS method
-  if ('OPTIONS' == req.method) {
-    res.send(200);
-  } else {
-    next();
-  }
-});
-
 app.use(express.static('./server'));
 app.use(express.static('../dist'));
 
@@ -70,7 +55,7 @@ app.use('/', courses);
 app.use('/', students);
 app.use('/protected', router);
 app.use(logger('dev'));
-app.use(function(req, res, next) {
+app.all(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'PUT, GET, POST, DELETE, OPTIONS');
   res.header(
