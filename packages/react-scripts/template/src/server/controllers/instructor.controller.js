@@ -17,9 +17,9 @@ exports.getInstructors = function(req, res) {
     // res.sendFile('index.html', {
     //   root: '../../projects/create-react-app/packages/react-scripts/template/public',
     // });
-    // // res.json({
-    // //   instructors: instructors.map(instructor => instructor.apiRepr()),
-    // // });
+    res.json({
+      instructors: instructors.map(instructor => instructor.apiRepr()),
+    });
     // res.send('message');
   });
 };
