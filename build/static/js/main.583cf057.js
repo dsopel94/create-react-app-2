@@ -507,7 +507,7 @@
       w = function(e, t) {
         return function(n) {
           n({ type: p.h, username: e, password: t }), d.a
-            .post('//whispering-badlands-12485.herokuapp.com/auth/login', {
+            .post('//whispering-badlands-12485.herokuapp.com/api/auth/login', {
               username: e,
               password: t,
             })
