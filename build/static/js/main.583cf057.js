@@ -513,9 +513,9 @@
             })
             .then(function(e) {
               v.set('token', e.data.token, {
-                path: '/',
+                path: '/create-react-app-2/build/',
                 maxAge: 86400,
-              }), v.set('instructor', e.data.instructor, { path: '/', maxAge: 86400 }), console.log(v.get('instructor')), n({ type: p.i, fullName: e.data.instructor.fullName });
+              }), v.set('instructor', e.data.instructor, { path: '/create-react-app-2/build/', maxAge: 86400 }), console.log(v.get('instructor')), n({ type: p.i, fullName: e.data.instructor.fullName });
             })
             .catch(function(e) {
               n({
@@ -2699,7 +2699,12 @@
             }),
           };
         }), (t.prototype.computeMatch = function(e) {
-          return { path: '/', url: '/', params: {}, isExact: '/' === e };
+          return {
+            path: '/create-react-app-2/build/',
+            url: '/',
+            params: {},
+            isExact: '/' === e,
+          };
         }), (t.prototype.componentWillMount = function() {
           var e = this, t = this.props, n = t.children, r = t.history;
           c()(
@@ -3049,7 +3054,9 @@
             key: 'render',
             value: function() {
               return !0 === this.props.authenticated
-                ? s.a.createElement(p.c, { to: '/auth/dashboard' })
+                ? s.a.createElement(p.c, {
+                    to: '/create-react-app-2/build/auth/dashboard',
+                  })
                 : s.a.createElement(u.a, {
                     onSubmit: this.processForm,
                     onChange: this.changeUser,
@@ -5637,41 +5644,49 @@
             null,
             o.a.createElement(s.a, {
               exact: !0,
-              path: '/login',
+              path: '/create-react-app-2/build/login',
               component: c.a,
             }),
-            o.a.createElement(s.a, { exact: !0, path: '/', component: u.a }),
             o.a.createElement(s.a, {
               exact: !0,
-              path: '/auth/dashboard',
+              path: '/create-react-app-2/build/',
+              component: u.a,
+            }),
+            o.a.createElement(s.a, {
+              exact: !0,
+              path: '/create-react-app-2/build/auth/dashboard',
               component: l.a,
             }),
             o.a.createElement(s.a, {
               exact: !0,
-              path: '/addCourse',
+              path: '/create-react-app-2/build/addCourse',
               component: b.a,
             }),
             o.a.createElement(s.a, {
               exact: !0,
-              path: '/courses/:cuid',
+              path: '/create-react-app-2/build/courses/:cuid',
               component: w.a,
             }),
             o.a.createElement(s.a, {
               exact: !0,
-              path: '/addStudent/:cuid',
+              path: '/create-react-app-2/build/addStudent/:cuid',
               component: _.a,
             }),
             o.a.createElement(s.a, {
               exact: !0,
-              path: '/editStudent/:cuid',
+              path: '/create-react-app-2/build/editStudent/:cuid',
               component: E.a,
             }),
             o.a.createElement(s.a, {
               exact: !0,
-              path: '/editCourse/:cuid',
+              path: '/create-react-app-2/build/editCourse/:cuid',
               component: C.a,
             }),
-            o.a.createElement(s.a, { exact: !0, path: '/info', component: x.a })
+            o.a.createElement(s.a, {
+              exact: !0,
+              path: '/create-react-app-2/build/info',
+              component: x.a,
+            })
           )
         )
       );
@@ -6172,7 +6187,9 @@
             key: 'render',
             value: function() {
               return this.state.submitted
-                ? s.a.createElement(l.c, { to: '/auth/dashboard' })
+                ? s.a.createElement(l.c, {
+                    to: '/create-react-app-2/build/auth/dashboard',
+                  })
                 : s.a.createElement(
                     'form',
                     { action: '/', onSubmit: this.onSubmit },
@@ -6192,7 +6209,7 @@
                           null,
                           s.a.createElement(
                             p.b,
-                            { to: '/auth/dashboard' },
+                            { to: '/create-react-app-2/build/auth/dashboard' },
                             'Back to Your Dashboard'
                           )
                         ),
@@ -6201,7 +6218,10 @@
                           null,
                           s.a.createElement(
                             p.b,
-                            { to: '/login', onClick: this.handleLogout },
+                            {
+                              to: '/create-react-app-2/build/login',
+                              onClick: this.handleLogout,
+                            },
                             'Log out '
                           )
                         )
@@ -6353,7 +6373,8 @@
             value: function() {
               return this.state.isSubmitted
                 ? s.a.createElement(l.c, {
-                    to: '/courses/' + this.props.match.params.cuid,
+                    to: '/create-react-app-2/build/courses/' +
+                      this.props.match.params.cuid,
                   })
                 : s.a.createElement(
                     'form',
@@ -6369,7 +6390,10 @@
                           null,
                           s.a.createElement(
                             p.b,
-                            { to: '/courses/' + this.props.match.params.cuid },
+                            {
+                              to: '/create-react-app-2/build/courses/' +
+                                this.props.match.params.cuid,
+                            },
                             'Back to Your Course Page'
                           )
                         ),
@@ -6378,7 +6402,10 @@
                           null,
                           s.a.createElement(
                             p.b,
-                            { to: '/login', onClick: this.handleLogout },
+                            {
+                              to: '/create-react-app-2/build/login',
+                              onClick: this.handleLogout,
+                            },
                             'Log out '
                           )
                         )
@@ -6657,7 +6684,7 @@
                   { className: 'return-link' },
                   s.a.createElement(
                     u.b,
-                    { to: '/login' },
+                    { to: '/create-react-app-2/build/login' },
                     'Click here to return to the login page.'
                   )
                 )
@@ -6756,7 +6783,8 @@
                 });
               return 1 == this.state.isClicked
                 ? s.a.createElement(c.c, {
-                    to: '/courses/' + this.state.coursename,
+                    to: '/create-react-app-2/build/courses/' +
+                      this.state.coursename,
                   })
                 : s.a.createElement('div', { className: 'courseButtons' }, n);
             },
@@ -6921,7 +6949,10 @@
                       null,
                       s.a.createElement(
                         l.b,
-                        { to: '/addStudent/' + this.props.match.params.cuid },
+                        {
+                          to: '/create-react-app-2/build/addStudent/' +
+                            this.props.match.params.cuid,
+                        },
                         'Add a new student'
                       )
                     ),
@@ -6930,7 +6961,10 @@
                       null,
                       s.a.createElement(
                         l.b,
-                        { to: '/editCourse/' + this.props.match.params.cuid },
+                        {
+                          to: '/create-react-app-2/build/editCourse/' +
+                            this.props.match.params.cuid,
+                        },
                         'Edit Course Name'
                       )
                     ),
@@ -6939,7 +6973,10 @@
                       null,
                       s.a.createElement(
                         l.b,
-                        { to: '/auth/dashboard', onClick: this.deleteCourse },
+                        {
+                          to: '/create-react-app-2/build/auth/dashboard',
+                          onClick: this.deleteCourse,
+                        },
                         'Remove this course'
                       )
                     ),
@@ -6948,7 +6985,10 @@
                       null,
                       s.a.createElement(
                         l.b,
-                        { to: '/auth/dashboard', onClick: this.handleRedirect },
+                        {
+                          to: '/create-react-app-2/build/auth/dashboard',
+                          onClick: this.handleRedirect,
+                        },
                         'Back to Your Dashboard'
                       )
                     ),
@@ -6957,7 +6997,10 @@
                       null,
                       s.a.createElement(
                         l.b,
-                        { to: '/login', onClick: this.handleLogout },
+                        {
+                          to: '/create-react-app-2/build/login',
+                          onClick: this.handleLogout,
+                        },
                         'Log out '
                       )
                     )
@@ -7109,7 +7152,7 @@
                       null,
                       s.a.createElement(
                         f.b,
-                        { to: '/addCourse' },
+                        { to: '/create-react-app-2/build/addCourse' },
                         'Add a new course '
                       )
                     ),
@@ -7118,7 +7161,10 @@
                       null,
                       s.a.createElement(
                         f.b,
-                        { to: '/login', onClick: this.handleLogout },
+                        {
+                          to: '/create-react-app-2/build/login',
+                          onClick: this.handleLogout,
+                        },
                         'Log out '
                       )
                     )
@@ -7261,7 +7307,10 @@
                       null,
                       s.a.createElement(
                         l.b,
-                        { to: '/courses/' + this.props.match.params.cuid },
+                        {
+                          to: '/create-react-app-2/build/courses/' +
+                            this.props.match.params.cuid,
+                        },
                         'Back to Your Course'
                       )
                     ),
@@ -7270,7 +7319,10 @@
                       null,
                       s.a.createElement(
                         l.b,
-                        { to: '/login', onClick: this.handleLogout },
+                        {
+                          to: '/create-react-app-2/build/login',
+                          onClick: this.handleLogout,
+                        },
                         'Log out '
                       )
                     )
@@ -7436,12 +7488,18 @@
                   { className: 'nav-options' },
                   s.a.createElement(
                     l.b,
-                    { to: '/courses/' + this.props.studentCourse },
+                    {
+                      to: '/create-react-app-2/build/courses/' +
+                        this.props.studentCourse,
+                    },
                     'Back to Your Course'
                   ),
                   s.a.createElement(
                     l.b,
-                    { to: '/login', onClick: this.handleLogout },
+                    {
+                      to: '/create-react-app-2/build/login',
+                      onClick: this.handleLogout,
+                    },
                     'Log out '
                   )
                 ),
@@ -7618,7 +7676,11 @@
               'div',
               { className: 'signup-redirect' },
               "Don't have an account? Create one. ",
-              o.a.createElement(s.b, { to: '/' }, ' Sign Up')
+              o.a.createElement(
+                s.b,
+                { to: '/create-react-app-2/build/' },
+                ' Sign Up'
+              )
             )
           )
         );
@@ -7702,18 +7764,29 @@
               'div',
               { className: 'login-redirect' },
               'Already have an account? ',
-              o.a.createElement(s.b, { to: '/login' }, ' Log in'),
+              o.a.createElement(
+                s.b,
+                { to: '/create-react-app-2/build/login' },
+                ' Log in'
+              ),
               o.a.createElement(
                 'p',
                 null,
                 'Want more info about this app?',
                 ' ',
-                o.a.createElement(s.b, { to: '/info' }, 'Click here'),
+                o.a.createElement(
+                  s.b,
+                  { to: '/create-react-app-2/build/info' },
+                  'Click here'
+                ),
                 ' '
               )
             )
           ),
-          o.a.createElement(u.a, { path: '/login', component: c.a })
+          o.a.createElement(u.a, {
+            path: '/create-react-app-2/build/login',
+            component: c.a,
+          })
         );
       };
     (l.propTypes = {
