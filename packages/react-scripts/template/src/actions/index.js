@@ -251,7 +251,7 @@ export const loginUser = (username, password) => {
       password: password,
     });
     axios
-      .post(`${API_URL}/auth/login`, { username, password })
+      .post(`${API_URL}auth/login`, { username, password })
       .then(response => {
         cookies.set('token', response.data.token, { path: '/', maxAge: 86400 });
         cookies.set('instructor', response.data.instructor, {
