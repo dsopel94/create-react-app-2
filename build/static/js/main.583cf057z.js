@@ -7094,7 +7094,8 @@
           {
             key: 'onClick',
             value: function(e) {
-              e.preventDefault(), (window.location = '/courses/' + e.target.id);
+              e.preventDefault(), (window.location = '/create-react-app-2/build/courses/' +
+                e.target.id);
             },
           },
           {
