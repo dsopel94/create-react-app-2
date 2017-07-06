@@ -409,7 +409,7 @@
         d.a
           .delete('//whispering-badlands-12485.herokuapp.com/courses/' + e)
           .then(function(e) {
-            (window.location.href = 'http://localhost:3000/auth/dashboard'), t({ type: p.b, payload: e.data.courses });
+            (window.location.href = '/auth/dashboard'), t({ type: p.b, payload: e.data.courses });
           });
       };
     }
@@ -422,7 +422,7 @@
           .then(function(e) {
             console.log(
               e.data.courses
-            ), (window.location.href = 'http://localhost:3000/courses/' + e.data.courses._id);
+            ), (window.location.href = '/courses/' + e.data.courses._id);
           });
       };
     }
@@ -458,7 +458,7 @@
               { username: e, fullName: t, password: n }
             )
             .then(function(e) {
-              window.location.href = 'http://localhost:3000/login';
+              window.location.href = '/login';
             });
         };
       },
@@ -482,7 +482,7 @@
                 courses: i,
                 streetAddress: r,
                 miscAddress: o,
-              }), (window.location.href = 'http://localhost:3000/courses/' + i), console.log(window.location.href), console.log(s.data.students, 'Student response');
+              }), (window.location.href = '/courses/' + i), console.log(window.location.href), console.log(s.data.students, 'Student response');
             });
         };
       },
@@ -500,7 +500,7 @@
               console.log(
                 e.data.students,
                 'Checking after put'
-              ), (window.location.href = 'http://localhost:3000/courses/' + e.data.students.courses);
+              ), (window.location.href = '/courses/' + e.data.students.courses);
             });
         };
       },
@@ -536,7 +536,7 @@
             .then(function(t) {
               v.get(
                 'instructor'
-              ), n({ type: p.f, coursename: e, _creator: v.get('instructor')._id, periods: [] }), (window.location.href = 'http://localhost:3000/auth/dashboard');
+              ), n({ type: p.f, coursename: e, _creator: v.get('instructor')._id, periods: [] }), (window.location.href = '/auth/dashboard');
             });
         };
       };
@@ -3153,8 +3153,7 @@
             value: function(e) {
               e.preventDefault(), this.setState({
                 isClickedEdit: !this.state.isClickedEdit,
-              }), (window.location.href = 'http://localhost:3000/editStudent/' +
-                this.props.id);
+              }), (window.location.href = '/editStudent/' + this.props.id);
             },
           },
           {
@@ -3165,8 +3164,7 @@
               }), this.props.dispatch(l.i(e.target.id)), console.log(
                 e.target.id,
                 'Check target id'
-              ), (window.location.href = 'http://localhost:3000/courses/' +
-                this.props.courses);
+              ), (window.location.href = '/courses/' + this.props.courses);
             },
           },
           {
@@ -6339,10 +6337,9 @@
                 o = this.state.student.streetAddress,
                 i = this.state.student.miscAddress,
                 a = this.props.match.params.cuid;
-              (window.location.href = 'http://localhost:3000/courses/' +
-                a), this.setState({ isSubmitted: !0 }), this.props.dispatch(
-                c.d(t, n, r, o, i, a)
-              );
+              (window.location.href = '/courses/' + a), this.setState({
+                isSubmitted: !0,
+              }), this.props.dispatch(c.d(t, n, r, o, i, a));
             },
           },
           {
@@ -7057,7 +7054,7 @@
             value: function(e) {
               m.remove('token'), this.setState({
                 authenticated: !1,
-              }), (window.location.href = 'http://localhost:3000/login');
+              }), (window.location.href = '/login');
             },
           },
           {
@@ -7071,7 +7068,7 @@
             value: function() {
               var e = this;
               this.state.authenticated ||
-                (window.location.href = 'http://localhost:3000/login'), console.log(
+                (window.location.href = '/login'), console.log(
                 this.state.authenticated,
                 'that the user is authenticated'
               );
@@ -7249,7 +7246,7 @@
             key: 'render',
             value: function() {
               return this.state.submitted &&
-                (window.location.href = 'http://localhost:3000/courses/' +
+                (window.location.href = '/courses/' +
                   this.props.match.params.cuid), s.a.createElement(
                 'form',
                 { action: '/', onSubmit: this.onSubmit },
@@ -7422,9 +7419,7 @@
                 o = this.state.student.streetAddress,
                 i = this.state.student.miscAddreess,
                 a = this.props.match.params.cuid;
-              this.props.dispatch(
-                c.b(a)
-              ), (window.location.href = 'http://localhost:3000/courses/' +
+              this.props.dispatch(c.b(a)), (window.location.href = '/courses/' +
                 this.props.studentCourse), this.setState({
                 isSubmitted: !0,
               }), this.props.dispatch(c.c(t, n, r, o, i, a));
