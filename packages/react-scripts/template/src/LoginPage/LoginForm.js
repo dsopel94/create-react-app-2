@@ -13,6 +13,7 @@ const LoginForm = (
     successMessage,
     instructor,
     error,
+    msg,
   }
 ) => (
   <form action="/" onSubmit={onSubmit}>
@@ -50,6 +51,15 @@ const LoginForm = (
       <div className="signup-redirect">
         Don't have an account? Create one. <Link to="/"> Sign Up</Link>
       </div>
+      <div className="demo-account-info">
+        <p>Want to try the app without creating a sign up?</p>
+        <p>Below are the credentials for a demo account.</p>
+        <div className="login-info">
+          <p>Username: dsopel</p>
+          <p>Password: Password1</p>
+        </div>
+      </div>
+      <div className="login-error-msg"><font color="red">{msg}</font></div>
     </div>
   </form>
 );
@@ -61,6 +71,7 @@ LoginForm.propTypes = {
   successMessage: PropTypes.string.isRequired,
   instructor: PropTypes.object.isRequired,
   error: PropTypes.string.isRequired,
+  msg: PropTypes.String,
 };
 
 export default LoginForm;

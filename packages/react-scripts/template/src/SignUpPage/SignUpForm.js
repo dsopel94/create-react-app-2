@@ -10,6 +10,7 @@ const SignUpForm = (
     onChange,
     errors,
     instructor,
+    msg,
   }
 ) => (
   <form action="/" onSubmit={onSubmit}>
@@ -23,6 +24,7 @@ const SignUpForm = (
           name="fullName"
           onChange={onChange}
           value={instructor.fullName}
+          required
         />
       </div>
       <div className="field-line">
@@ -32,6 +34,7 @@ const SignUpForm = (
           name="username"
           onChange={onChange}
           value={instructor.username}
+          required
         />
       </div>
       <div className="field-line">
@@ -42,9 +45,10 @@ const SignUpForm = (
           name="password"
           onChange={onChange}
           value={instructor.password}
+          required
         />
       </div>
-      <div className="button-line">
+      <div className="signup-button-line">
         <button type="submit" className="sign-up-button">
           Create New Account
         </button>
@@ -61,6 +65,7 @@ const SignUpForm = (
       </div>
     </div>
     <Route path="/login" component={LoginPage} />
+    <div className="error-msg"><font color="red">{msg}</font></div>
   </form>
 );
 
@@ -69,6 +74,7 @@ SignUpForm.propTypes = {
   onChange: PropTypes.func.isRequired,
   errors: PropTypes.object.isRequired,
   instructor: PropTypes.object.isRequired,
+  msg: PropTypes.String,
 };
 
 export default SignUpForm;

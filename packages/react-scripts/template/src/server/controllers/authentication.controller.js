@@ -99,6 +99,7 @@ exports.register = function(req, res, next) {
 
     // If user is not unique, return error
     if (existingInstructor) {
+      // return res.redirect('/?msg=username%20exists');
       return res
         .status(422)
         .send({ error: 'That user name is already in use.' });

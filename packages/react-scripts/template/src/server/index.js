@@ -8,6 +8,9 @@ const instructors = require('./routes/instructor.routes');
 const courses = require('./routes/course.routes');
 const periods = require('./routes/period.routes');
 const students = require('./routes/student.routes');
+const flash = require('connect-flash');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
 logger = require('morgan');
 const router = require('./routes/router');
 // const home = require('./routse/home.routes')
@@ -16,9 +19,10 @@ const passport = require('passport');
 app.use(express.static('./server'));
 app.use(express.static('../dist'));
 
-app.get('/', function(request, response) {
-  response.send('Hello World!');
-});
+app.use(cookieParser('keyboard cat'));
+app.use(session({ key: 'sid', cookie: { maxAge: 60000 } }));
+
+app.use(flash());
 
 // Database Setup
 // mongoose.connect(config.dbUri);
@@ -49,6 +53,7 @@ app.use('/instructors', instructors);
 //app.use('/api/register', router);
 app.use('/auth/dashboard', router);
 app.use('/api/login', router);
+//app.use('/',function(req,res){ console.log(flash('error')); res.send(); })
 app.use('/', periods);
 //app.use('/addCourse',courses)
 app.use('/api', courses);

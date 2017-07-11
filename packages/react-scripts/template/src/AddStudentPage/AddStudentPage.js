@@ -65,6 +65,7 @@ class AddStudentPage extends React.Component {
     }
     return (
       <form action="/" onSubmit={this.onSubmit}>
+        <div className="student-app-name">School Management App</div>
         <div className="add-student-nav-options">
           <ul>
             <li>

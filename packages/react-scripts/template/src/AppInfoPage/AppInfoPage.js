@@ -33,7 +33,7 @@ class AppInfoPage extends React.Component {
           instructor's data and Passport.js is used for authentication purposes.
         </p>
         <div className="return-link">
-          <Link to="/login">Click here to return to the login page.</Link>
+          <Link to="/login">Click here to head to the login page.</Link>
         </div>
       </div>
     );

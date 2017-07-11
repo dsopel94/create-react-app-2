@@ -10,7 +10,7 @@ class EditCoursePage extends React.Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      name: '',
+      name: this.props.name,
       submitted: false,
       _creator: {},
     };
@@ -28,6 +28,14 @@ class EditCoursePage extends React.Component {
     this.setState({
       name: event.target.value,
     });
+  }
+
+  componentWillMount() {
+    this.props.dispatch(actions.getCourse(this.props.match.params.cuid));
+  }
+
+  componentDidMount() {
+    this.props.dispatch(actions.getCourse(this.props.match.params.cuid));
   }
 
   onSubmit(event) {
@@ -50,18 +58,20 @@ class EditCoursePage extends React.Component {
     return (
       <form action="/" onSubmit={this.onSubmit}>
         <div className="edit-course-nav-options">
+          <div className="course-app-name">School Management App</div>
           <ul>
+            <li>
+              <Link to="/login" onClick={this.handleLogout}>Log out </Link>
+            </li>
             <li>
               <Link to={`/courses/${this.props.match.params.cuid}`}>
                 Back to Your Course
               </Link>
             </li>
-            <li>
-              <Link to="/login" onClick={this.handleLogout}>Log out </Link>
-            </li>
           </ul>
         </div>
         <div className="container">
+          <div className="edit-course-name"><h2>{this.props.name}</h2></div>
           <div className="submitForm">
             <div className="field-line">
               <label htmlFor="coursename">Course Name:</label>
@@ -72,7 +82,7 @@ class EditCoursePage extends React.Component {
                 onChange={this.updateName}
               />
             </div>
-            <button type="submit" className="add-course">Edit Course</button>
+            <button type="submit" className="edit-course">Edit Course</button>
           </div>
         </div>
       </form>
@@ -81,7 +91,7 @@ class EditCoursePage extends React.Component {
 }
 const mapStateToProps = (state, props) => {
   return {
-    name: state.course.coursename,
+    name: state.course.course.name,
     _creator: state.course._creator,
   };
 };

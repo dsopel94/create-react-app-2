@@ -40,7 +40,15 @@ class EditStudentPage extends React.Component {
   componentWillMount() {
     this.props.dispatch(actions.getStudent(this.props.match.params.cuid));
     console.log("Let's see what happens here");
+    console.log(this.props.firstName, 'first name');
   }
+
+  componentDidMount() {
+    this.props.dispatch(actions.getStudent(this.props.match.params.cuid));
+    console.log("Let's see what happens here");
+    console.log(this.props.firstName, 'first name');
+  }
+
   onSubmit(event) {
     event.preventDefault();
     const firstName = this.state.student.firstName;
@@ -72,11 +80,21 @@ class EditStudentPage extends React.Component {
     }
     return (
       <form action="/" onSubmit={this.onSubmit}>
-        <div className="nav-options">
-          <Link to={`/courses/${this.props.studentCourse}`}>
-            Back to Your Course
-          </Link>
-          <Link to="/login" onClick={this.handleLogout}>Log out </Link>
+        <div className="student-name">
+          <div className="app-name">School Management System</div>
+          <div className="edit-student-nav-options">
+            <ul>
+              <li>
+                <Link to={`/courses/${this.props.studentCourse}`}>
+                  Back to Your Course
+                </Link>
+              </li>
+              <li>
+                <Link to="/login" onClick={this.handleLogout}>Log out </Link>
+              </li>
+            </ul>
+          </div>
+          <h2>{this.props.firstName} {this.props.lastName}</h2>
         </div>
         <div className="container">
           <div className="submitForm">
@@ -85,7 +103,7 @@ class EditStudentPage extends React.Component {
               <input
                 id="firstName"
                 name="firstName"
-                value={this.state.firstName}
+                value={this.props.firstName}
                 onChange={this.updateInput}
               />
             </div>
@@ -94,7 +112,7 @@ class EditStudentPage extends React.Component {
               <input
                 id="lastName"
                 name="lastName"
-                value={this.state.lastName}
+                value={this.props.lastName}
                 onChange={this.updateInput}
               />
             </div>
@@ -103,7 +121,7 @@ class EditStudentPage extends React.Component {
               <input
                 id="phoneNumber"
                 name="phoneNumber"
-                value={this.state.phoneNumber}
+                value={this.props.phoneNumber}
                 onChange={this.updateInput}
               />
             </div>
@@ -112,7 +130,7 @@ class EditStudentPage extends React.Component {
               <input
                 id="streetAddress"
                 name="streetAddress"
-                value={this.state.streetAddress}
+                value={this.props.streetAddress}
                 onChange={this.updateInput}
               />
             </div>
@@ -121,7 +139,7 @@ class EditStudentPage extends React.Component {
               <input
                 id="miscAddress"
                 name="miscAddress"
-                value={this.state.miscAddress}
+                value={this.props.miscAddress}
                 onChange={this.updateInput}
               />
             </div>
@@ -135,9 +153,11 @@ class EditStudentPage extends React.Component {
 
 const mapStateToProps = (state, props) => {
   return {
-    firstName: state.student.firstName,
-    lastName: state.student.lastName,
-    phoneNumber: state.student.phoneNumber,
+    firstName: state.student.student.firstName,
+    lastName: state.student.student.lastName,
+    phoneNumber: state.student.student.phoneNumber,
+    miscAddress: state.student.student.miscAddress,
+    streetAddress: state.student.student.streetAddress,
     courses: state.student.courses,
     studentCourse: state.student.student.courses,
   };

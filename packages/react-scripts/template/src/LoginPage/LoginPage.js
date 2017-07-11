@@ -67,6 +67,7 @@ class LoginPage extends React.Component {
    * Render the component.
    */
   render() {
+    console.log(this.props.error);
     if (this.props.authenticated === true) {
       return <Redirect to="/auth/dashboard" />;
     }
@@ -78,6 +79,7 @@ class LoginPage extends React.Component {
         successMessage={this.state.successMessage}
         instructor={this.state.instructor}
         error={this.props.error}
+        msg={this.props.error}
       />
     );
   }
