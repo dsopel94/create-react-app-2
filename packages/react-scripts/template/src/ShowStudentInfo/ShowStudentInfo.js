@@ -98,10 +98,8 @@ class ShowStudentInfo extends React.Component {
           </button>
         </div>
         {this.state.isClicked &&
-          this.state.clickedStudentId === this.props.id &&
           <div className="student-info">
             <div className="student-info-box">
-              <p>{this.state.clickedStudentId} || {}</p>
               <p>Name: {this.props.firstName} {this.props.lastName}</p>
               <p>Phone Number: {this.props.phoneNumber}</p>
               <p>Street Address: {this.props.streetAddress} </p>
