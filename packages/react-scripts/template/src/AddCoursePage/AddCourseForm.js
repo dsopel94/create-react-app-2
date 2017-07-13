@@ -47,30 +47,29 @@ class AddCoursePage extends React.Component {
     }
     return (
       <form action="/" onSubmit={this.onSubmit}>
-        <div className="add-course-header">
-          <h1>Add a Course</h1>
-        </div>
         <div className="add-course-nav-options">
+          <div className="student-app-name">School Management App</div>
           <ul>
-            <li><Link to="/auth/dashboard">Back to Your Dashboard</Link></li>
             <li>
               <Link to="/login" onClick={this.handleLogout}>Log out </Link>
             </li>
+            <li><Link to="/auth/dashboard">Back to Your Dashboard</Link></li>
           </ul>
         </div>
+        <div className="add-course-header">
+          <h1>Add a Course</h1>
+        </div>
         <div className="add-course-container">
-          <div className="submitForm">
-            <div className="add-coursename-field-line">
-              <label htmlFor="coursename">Course Name:</label>
-              <input
-                id="coursename"
-                name="coursename"
-                value={this.state.name}
-                onChange={this.updateName}
-              />
-            </div>
-            <button type="submit" className="add-course">Add Course</button>
+          <div className="add-coursename-field-line">
+            <label htmlFor="coursename">Course Name:</label>
+            <input
+              id="coursename"
+              name="coursename"
+              value={this.state.name}
+              onChange={this.updateName}
+            />
           </div>
+          <button type="submit" className="add-course">Add Course</button>
         </div>
       </form>
     );

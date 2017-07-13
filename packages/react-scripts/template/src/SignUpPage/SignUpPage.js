@@ -53,7 +53,9 @@ class SignUpPage extends React.Component {
   };
 
   // let this.hacky;
-  componentDidMount() {
+
+  componentDidMount(props) {
+    // var msg;
     // this.props.dispatch(actions.registerUser(username,fullName,password));
     /**
    * Process the form.
@@ -62,12 +64,24 @@ class SignUpPage extends React.Component {
    */
   }
   render() {
+    var msg = window.location.href;
+    msg = msg.replace(/%20/g, ' ');
+    msg = msg.split('=');
+    msg = msg[1];
+    console.log(
+      'XXXZ:',
+      this.msg,
+      this.msg,
+      this.props.msg,
+      this.props.match.params.msg
+    );
     return (
       <SignUpForm
         onSubmit={this.processForm}
         onChange={this.changeUser}
         errors={this.state.errors}
         instructor={this.state.instructor}
+        msg={msg}
       />
     );
   }

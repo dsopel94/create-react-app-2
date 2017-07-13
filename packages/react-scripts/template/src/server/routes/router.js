@@ -5,8 +5,14 @@ const passport = require('passport');
 //const CourseController = require('../controllers/course.controller.js')
 const app = express();
 
-const requireAuth = passport.authenticate('jwt', { session: false });
-const requireLogin = passport.authenticate('local', { session: false });
+const requireAuth = passport.authenticate('jwt', {
+  session: false,
+  failureFlash: true,
+});
+const requireLogin = passport.authenticate('local', {
+  session: false,
+  failureFlash: 'Incorrect username or password!',
+});
 
 module.exports = function(app) {
   // Initializing route groups

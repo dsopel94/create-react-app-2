@@ -67,14 +67,20 @@ class DashboardPage extends React.Component {
     });
     return (
       <div>
-        <div className="greeting"> Welcome Back, {inst}</div>
         <div className="dashboard-links">
+          <div className="student-app-name">School Management App</div>
           <ul>
-            <li><Link to="/addCourse">Add a new course </Link></li>
             <li>
               <Link to="/login" onClick={this.handleLogout}>Log out </Link>
             </li>
+            <li><Link to="/addCourse">Add a new course </Link></li>
           </ul>
+        </div>
+        <div className="greeting"> Welcome Back, {inst}</div>
+        <div className="getting-started">
+          <p>
+            Need help getting started? It's as simple as clicking on "Add a new Course" above and your courses can be accessed by clicking on the desired one below!
+          </p>
         </div>
         <div className="dashboard-your-courses"><h2>Your Courses</h2></div>
         <div className="courseList">{courseButtons}</div>

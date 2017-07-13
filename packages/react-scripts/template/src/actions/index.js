@@ -162,10 +162,11 @@ export const registerUser = (
         // cookie.save('token', res.data.token, { path: '/' });
         window.location.href = 'http://localhost:3000/login';
         // dispatch({ type: REGISTER_USER_SUCCESS });
+      })
+      .catch(error => {
+        window.location.href = '/?msg=This%20username%20already%20exists';
+        // errorHandler(dispatch, error.response, AUTH_ERROR);
       });
-    // .catch(error => {
-    //   errorHandler(dispatch, error.response, AUTH_ERROR);
-    // });
   };
 };
 
@@ -251,14 +252,12 @@ export const loginUser = (username, password) => {
         //window.location.href = 'http://localhost:3000/auth/dashboard'
       })
       .catch(error => {
+        //window.location.href = '/?msg=Not%20a%20valid%20username%20or%20password%20combination';
         dispatch({
           type: LOGIN_USER_FAILURE,
           error: 'Not a valid username/password combination',
         });
       });
-    // .catch(error => {
-    //   errorHandler(dispatch, error.response, AUTH_ERROR);
-    // });
   };
 };
 //http://localhost:3001/courses

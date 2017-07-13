@@ -28,32 +28,37 @@ const LocalStrategy = require('passport-local');
 //
 //       return done(null, instructor);
 //     });
-const localLogin = new LocalStrategy(function(username, password, done) {
-  console.log('This is getting called!');
-  Instructor.findOne({ username: username }, function(err, instructor) {
-    if (err) {
-      return done(err);
-    }
-    if (!instructor) {
-      return done(null, false, {
-        error: 'Your login details could not be verified. Please try again.',
-      });
-    }
-
-    instructor.comparePassword(password, function(err, isMatch) {
+const localLogin = new LocalStrategy(
+  {
+    passReqToCallback: true,
+  },
+  function(req, username, password, done) {
+    console.log('This is getting called!');
+    Instructor.findOne({ username: username }, function(err, instructor) {
       if (err) {
         return done(err);
       }
-      if (!isMatch) {
+      if (!instructor) {
         return done(null, false, {
           error: 'Your login details could not be verified. Please try again.',
         });
       }
-      console.log('Success!');
-      return done(null, instructor);
+
+      instructor.comparePassword(password, function(err, isMatch) {
+        if (err) {
+          return done(err);
+        }
+        if (!isMatch) {
+          return done(null, false, {
+            error: 'Your login details could not be verified. Please try again.',
+          });
+        }
+        console.log('Success!');
+        return done(null, instructor);
+      });
     });
-  });
-});
+  }
+);
 
 const jwtOptions = {
   // Telling Passport to check authorization headers for JWT
@@ -75,6 +80,5 @@ const jwtLogin = new JwtStrategy(jwtOptions, function(payload, done) {
     }
   });
 });
-
 passport.use(jwtLogin);
 passport.use(localLogin);
