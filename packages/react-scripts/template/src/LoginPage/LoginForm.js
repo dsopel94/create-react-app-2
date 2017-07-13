@@ -22,7 +22,7 @@ const LoginForm = (
       <h2 className="login">Log In</h2>
       {successMessage && <p className="success-message">{successMessage}</p>}
       {errors.summary && <p className="error-message">{errors.summary}</p>}
-      <div className="field-line">
+      <div className="login-field-line">
         <label htmlFor="username">Username:</label>
         <input
           id="username"
@@ -33,7 +33,7 @@ const LoginForm = (
           error={error.username}
         />
       </div>
-      <div className="field-line">
+      <div className="login-field-line">
         <label htmlFor="password">Password:</label>
         <input
           type="password"
